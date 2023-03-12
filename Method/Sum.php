@@ -7,6 +7,7 @@ use GDO\CLI\MethodCLI;
 use GDO\Form\GDT_Form;
 use GDO\Form\GDT_AntiCSRF;
 use GDO\Form\GDT_Submit;
+use GDO\Core\GDT_String;
 
 /**
  * Build a sum from a sequence of numbers.
@@ -32,7 +33,7 @@ final class Sum extends MethodCLI
 		{
 			$sum += $num;
 		}
-		return $this->response($sum);
+		return GDT_String::make()->var($sum);
 	}
 	
 }
