@@ -1,22 +1,23 @@
 <?php
 namespace GDO\Math\Method;
 
-use GDO\UI\GDT_Repeat;
-use GDO\Core\GDT_Decimal;
 use GDO\CLI\MethodCLI;
-use GDO\Form\GDT_Form;
-use GDO\Form\GDT_AntiCSRF;
-use GDO\Form\GDT_Submit;
+use GDO\Core\GDT_Decimal;
 use GDO\Core\GDT_String;
+use GDO\Form\GDT_AntiCSRF;
+use GDO\Form\GDT_Form;
+use GDO\Form\GDT_Submit;
+use GDO\UI\GDT_Repeat;
 
 /**
  * Build a sum from a sequence of numbers.
  * This is merely a testing function :)
- * 
+ *
  * @author gizmore
  */
 final class Sum extends MethodCLI
 {
+
 	public function createForm(GDT_Form $form): void
 	{
 		$form->addFields(
@@ -25,7 +26,7 @@ final class Sum extends MethodCLI
 		);
 		$form->actions()->addField(GDT_Submit::make());
 	}
-	
+
 	public function formValidated(GDT_Form $form)
 	{
 		$sum = 0;
@@ -35,5 +36,5 @@ final class Sum extends MethodCLI
 		}
 		return GDT_String::make()->var($sum);
 	}
-	
+
 }
