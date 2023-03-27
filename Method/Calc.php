@@ -1,6 +1,7 @@
 <?php
 namespace GDO\Math\Method;
 
+use GDO\Core\GDT;
 use GDO\Core\GDT_String;
 use GDO\Core\Method;
 
@@ -19,7 +20,7 @@ final class Calc extends Method
 		];
 	}
 
-	public function execute()
+	public function execute(): GDT
 	{
 		$expression = $this->gdoParameterVar('expression');
 		return eval($expression);

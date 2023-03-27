@@ -2,6 +2,7 @@
 namespace GDO\Math\Method;
 
 use GDO\CLI\MethodCLI;
+use GDO\Core\GDT;
 use GDO\Core\GDT_Decimal;
 use GDO\Core\GDT_String;
 use GDO\Form\GDT_AntiCSRF;
@@ -27,7 +28,7 @@ final class Sum extends MethodCLI
 		$form->actions()->addField(GDT_Submit::make());
 	}
 
-	public function formValidated(GDT_Form $form)
+	public function formValidated(GDT_Form $form): GDT
 	{
 		$sum = 0;
 		foreach ($this->gdoParameterValue('num') as $num)
