@@ -19,7 +19,7 @@ use GDO\UI\GDT_Repeat;
 final class Sum extends MethodCLI
 {
 
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		$form->addFields(
 			GDT_Repeat::makeAs('num', GDT_Decimal::make()),
